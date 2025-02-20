@@ -1,0 +1,33 @@
+button {
+  position: relative;
+  border: 0;
+  background: #2A313C;
+  padding: .75rem;
+  color: #6F9DE2;
+  border-radius: .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font: 600 1rem/160% var(--ff);
+  cursor: pointer;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #6F9DE2;
+    opacity: 0; /* Começa invisível */
+  transition: opacity 0.5s ease-in-out;
+  z-index: -1; /* Mantém o texto e a imagem acima */
+}
+
+button .trade-hover {
+  transition: opacity 1s ease-in-out;
+}
+
+button:hover .trade-hover {
+  content: url("../assets/arrorR-hover.svg");
+}
+

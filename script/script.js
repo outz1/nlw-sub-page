@@ -37,14 +37,28 @@ const totalSubs = (userData) => { //Usuários que foram referenciados
 
 const showInvite = (userData) => {
   app.innerHTML = `
-    <input type="text" id="link" value="https://evento.com?ref=${userData.ref}" disabled>
-    <div id="stats">
-      <h4>
-      ${totalSubs(userData)}
-      </h4>
-      <p>Inscrições Feitas</p>
-    </div>
+    <main>
+      <h3>
+        Inscrição confirmada</h3>
+        <p>Convide mais pessoas e concorra a prêmios! 
+          <br>Compartilhe o link e acompanhe as inscrições:</p>
+
+      <div class="input-group">
+        <label for="link">
+          <img src="link.svg" alt="">
+        </label>
+        <input type="text" id="link" value="https://evento.com?ref=${userData.ref}" disabled>
+      </div>
+      </main>
+      <section class="stats">
+        <h4>
+          ${totalSubs(userData)}
+        </h4>
+        <p>Inscrições Feitas</p>
+      </section>
   `
+  app.setAttribute('class', 'page-invite')
+  updateImageLinks()
 }
 
 const saveUser = (userData) => { //Criação de usuário
@@ -92,16 +106,59 @@ const updateImageLinks = () => {
 
 const StartApp = () => { //Main Page
   const content = `
-  <form id="form">
-    <input type="email" name="email" placeholder="E-mail">
-    <input type="text" name="phone" placeholder="Telefone">
-    <button type="submit">Confirmar</button>
-  </form>
+      <main>
+        <section class="about">
+          <div class="section-header">
+            <h2>
+              Sobre o evento
+            </h2>
+            <span class="badge">AO VIVO</span>
+            </div>
+
+            <p>Um evento feito por e para pessoas desenvolvedoras apaixonadas por criar soluções inovadoras e compartilhar conhecimento. Vamos mergulhar nas tendências mais recentes em desenvolvimento de software, arquitetura de sistemas e tecnologias emergentes, com palestras, workshops e hackathons.
+              <br> <br>
+              Dias 15 a 17 de março | Das 18h às 21h | Online & Gratuito </p>
+        </section>
+
+        <section class="registration">
+          <h2>Inscrição</h2>
+          <form id="form" action="#">
+            <div class="input-wrapper">
+
+              <div class="input-group">
+                <label for="email">
+                  <img src="mail.svg" alt="Email">
+                </label>
+                <input type="email" id="email" name="email" placeholder="E-mail">
+              </div>
+
+              <div class="input-group">
+                <label for="phone">
+                  <img src="phone.svg" alt="Telefone">
+                </label>
+                <input type="text" id="phone" name="phone" placeholder="Telefone">
+              </div>
+            </div>
+
+            <button>
+              Confirmar
+              <img class=trade-hover src="arrow.svg" alt="">
+            </button>
+          </form>
+        </section>
+      </main>
+
   `
   app.innerHTML = content
+  app.setAttribute('class', 'page-start')
+  updateImageLinks()
   formAction()
 }
 
 StartApp()
 
-document.getElementById("logo").onclick = () => StartApp()
+
+
+const logo = document.getElementById("logo");
+logo.style.cursor = "pointer";
+logo.onclick = () => StartApp();

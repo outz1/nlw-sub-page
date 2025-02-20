@@ -1,0 +1,52 @@
+main {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 368px;
+}
+section {
+  background: var(--bg-section);
+  padding: 1.5rem;
+  border: 1px solid #21252C;
+  border-radius: 1rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-family: var(--ff-2);
+  font-size: 1.25rem;
+  line-height: 100%;
+  color: #C8D0DA;
+}
+
+
+
+p {
+  font: 0.875rem/160% ;
+  color: #95A1B1;
+}
+
+
+form {
+  display: grid;
+  gap: 1.5rem; 
+}
+
+input {
+  background: none;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--tx-color);
+  outline: none;
+}
+
+input::placeholder {
+  line-height: 160%;
+  color: #6F7D90;
+}

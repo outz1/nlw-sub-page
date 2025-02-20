@@ -4,10 +4,45 @@
   box-sizing: border-box;
 }
 
-:root {
-  font-family: "Montserrat", serif;
+:root, input, button {
+  --ff: "Montserrat", serif;
+  --ff-2:"Oxanium", serif; 
+  --tx-color: #E1E1E6;
+  --h1-color: #DAE4F2;
+  --dv-color: #294c80;
+  --bg-section: #191D24;
+
+
 }
 body {
+  font-family: var(--ff);
   background: url("https://raw.githubusercontent.com/maykbrito/my-public-files/main/nlw-19/bg.jpg") no-repeat center/cover;
   min-height: 100vh;
+  color: var(--tx-color);
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+header {
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  text-align: center;
+  font-family: var(--ff-2);
+  font-size: 2.5rem;
+  line-height: 100%;
+  color: var(--h1-color);
+}
+
+h1 div {
+  color: var(--dv-color);
+}
+
+#header {
+  cursor: pointer;
 }
